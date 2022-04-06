@@ -4,3 +4,9 @@ r"""Access data from https://api.data.gov/ed/collegescorecard/v1/schools
     This is a huge database based on IPEDS that has a nice JSON API.
 
 """
+
+from .constants import (
+    URL,
+    FIELDS,
+    HERA_UNIT_IDS,
+)
