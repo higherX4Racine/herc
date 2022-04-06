@@ -1,7 +1,7 @@
 #  Copyright (c) 2022 by Higher Expectations for Racine County.
 
 def url() -> str:
-    r"""Hard-code the address of the College Report Card API
+    r"""Hard-code the address of the College Scorecard API
 
     Returns
     -------

@@ -3,12 +3,12 @@ herc
 ====
 
 .. automodule:: herc
-    :members: parse
 
-.. toctree::
-   :maxdepth: 2
+.. autosummary::
+   :toctree: herc
+   :recursive:
 
-   collegereportcard
+   collegescorecard
 
 ==================
 Indices and tables
