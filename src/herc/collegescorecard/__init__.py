@@ -5,6 +5,8 @@ r"""Access data from https://api.data.gov/ed/collegescorecard/v1/schools
 
 """
 
+from .field import Field
+
 from .constants import (
     URL,
     FIELDS,

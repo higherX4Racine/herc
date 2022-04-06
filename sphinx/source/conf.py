@@ -33,12 +33,11 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    'numpydoc',
-    'sphinx.ext.napoleon',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -48,7 +47,6 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -67,19 +65,20 @@ html_logo = '_static/HE Logo Final_Modern Media.png'
 
 autodoc_default_options = {
     'members': True,
-    'member_order': 'bysource',
     'show-inheritance': True,
     'ignore-module-all': True,
 }
+
+autodoc_member_order = 'bysource'
 
 autosummary_generate = True
 autosummary_generate_overwrite = True
 
 # -- Options for numppdoc ----------------------------------------------------
 
-numpydoc_show_class_members = False
+# numpydoc_show_class_members = False
 
-# -- Options for napoleon, numpydoc's extension to sphinx --------------------
+# # -- Options for napoleon, numpydoc's extension to sphinx --------------------
 
 # Napoleon settings
 napoleon_google_docstring = False
