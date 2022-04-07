@@ -103,5 +103,6 @@ intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
     'numpy': ('https://numpy.org/doc/stable', None),
     'pandas': ('https://pandas.pydata.org/docs/', None),
+    'requests': ('https://docs.python-requests.org/en/latest/', None),
     'sqlalchemy': ('https://docs.sqlalchemy.org/en/20/', None),
 }

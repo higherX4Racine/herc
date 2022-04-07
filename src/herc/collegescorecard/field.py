@@ -75,7 +75,8 @@ class Field:
 
         Returns
         -------
-        str : a dot-separated key path: year.category.name
+        str
+            a dot-separated key path: year.category.name
 
         """
 
@@ -87,3 +88,12 @@ class Field:
             None if self.category == 'root' else self.category,
             self.name
         ]))
+
+    def __eq__(self, other) -> bool:
+        return self.name == other.name and self.category == other.category
+
+    def __str__(self) -> str:
+        return self.render_as_parameter()
+
+    def __repr__(self) -> str:
+        return f"Field(name='{self.name}', category='{self.category}')"
