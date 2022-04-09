@@ -1,10 +1,11 @@
 #  Copyright (c) 2022 by Higher Expectations for Racine County.
 r"""Utilities for dealing with geographic ids.
 
-    You can get a full list of each geographical area at
-    https://download.bls.gov/pub/time.series/la/la.area
+You can get a full list of each geographical area at
+https://download.bls.gov/pub/time.series/la/la.area
 
 """
+
 
 class GeographicAreaType:
     r"""BLS uses their own version of the old FIPS for tracking locations.
