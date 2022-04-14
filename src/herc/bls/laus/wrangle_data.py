@@ -1,6 +1,9 @@
 #  Copyright (c) 2022 by Higher Expectations for Racine County.
 
-from typing import Iterable
+from typing import (
+    Iterable,
+    List,
+)
 
 import pandas
 import requests
@@ -19,12 +22,12 @@ def _extract_data_payload(response: requests.Response) -> Iterable:
                   response.json()['Results']['series'])
 
 
-def wrangle(response: requests.Response) -> pandas.DataFrame:
+def wrangle(responses: List[requests.Response]) -> pandas.DataFrame:
     r"""Do the absolute minimum necessary to make a response into table
 
     Parameters
     ----------
-    response : requests.Response
+    responses : List[requests.Response]
         the result of calling `get`.
 
     Returns
@@ -34,9 +37,10 @@ def wrangle(response: requests.Response) -> pandas.DataFrame:
 
     """
 
-    return pandas.concat(
-        map(_consolidate,
-            _extract_data_payload(response)),
-        ignore_index=True)[
-        OUTPUT_COLUMNS.keys()
-    ].rename(columns=OUTPUT_COLUMNS)
+    tables = [pandas.concat(map(_consolidate,
+                                _extract_data_payload(r)))
+              for r in responses]
+
+    return pandas.concat(tables)[OUTPUT_COLUMNS.keys()].\
+        convert_dtypes().\
+        rename(columns=OUTPUT_COLUMNS)
